@@ -1,0 +1,28 @@
+<%-include('header') %>
+<div class="login-container">
+    <div class="login-wrapper">
+        <div class="login-title">
+            <h1>Welcome</h1>
+        <p>Login to get start !</p>
+        <% if (error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+        </div>
+        
+        <form action="/login" method="POST">
+            <div class="username">
+                <input type="text" placeholder="Enter your username" name="email">
+            </div>
+            <div class="password">
+                <input type="password" placeholder="Enter your password" name="password">
+            </div>
+            <div class="button-submit">
+                <button type="submit">Submit</button>
+                <% if(locals.message){ %>
+                    <h1><%= message %></h1>
+                <% } %>
+            </div>
+        </form>
+    </div>
+</div>
+<%- include('footer') %>
